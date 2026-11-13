@@ -1,0 +1,23 @@
+                                            base sec_instruc    few_shot         cot cot_fewshot    cwe_hint self_refine     TOTAL
+n                                             21          21          21          21          21          21          21       147
+truncated                                      0           1           0           0           0           0           1         2
+unclosed_fence                                 0           1           0           0           0           0           1         2
+no_fence_in_raw                                0           0           0           0           0           0           0         0
+fence_left_in_code                             0           0           0           0           0           0           0         0
+syntax_error                                   0           1           0           0           0           0           1         2
+syntax_error_and_truncated                     0           1           0           0           0           0           1         2
+target_func_missing                            0           1           0           0           0           0           1         2
+harness_ok                                    21          20          21          21          21          21          20       145
+harness_no_verdict                             0           1           0           0           0           0           1         2
+harness_timeout                                0           0           0           0           0           0           0         0
+bandit_crash                                   0           0           0           0           0           0           0         0
+samples_with_unexpected_exception              0           0           0           0           0           0           0         0
+
+Per-test outcomes / harness errors (all methods):
+     82  target CWE not flagged
+     63  target CWE flagged
+      2  code does not parse (Bandit not run)
+
+examples of truncated (2): [('sec_instruct', 'CWE-377_codeql_1.py'), ('self_refine', 'CWE-377_codeql_1.py')]
+
+examples of syntax (2): [('sec_instruct', 'CWE-377_codeql_1.py', 'line 18: import cryptography.hazmat.primitives.serialization import E'), ('self_refine', 'CWE-377_codeql_1.py', 'line 18: import cryptography.hazmat.primitives.serialization import E')]
